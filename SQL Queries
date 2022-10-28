@@ -42,8 +42,8 @@ FROM Bike_Data..Bike_Data_All
 --Selecting count and percentage of riders
 SELECT
 member_casual,
-	COUNT(member_casual) as total_riders,
-	COUNT(member_casual) * 100.0 / 
+	COUNT(DISTINCT (member_casual)) as total_riders,
+	COUNT(DISTINCT (member_casual)) * 100.0 / 
 	(SELECT COUNT(*) 
 	FROM Bike_Data..Bike_Data_All) as percentage_riders
 FROM Bike_Data..Bike_Data_All
